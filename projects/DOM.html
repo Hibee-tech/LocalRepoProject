@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulation</title>
+  <style>
+   .highlight {
+      background-color: #ccc;
+    }
+   .important {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="header">Old Header</h1>
+  <p id="paragraph" class="highlight">This is a paragraph.</p>
+  <button id="button">Click me!</button>
+
+  <script>
+    // Update text content
+    document.getElementById('header').textContent = 'New Header';
+
+    // Change background color
+    document.querySelector('.highlight').style.backgroundColor = 'yellow';
+
+    // Add a class
+    document.getElementById('paragraph').classList.add('important');
+
+    // Add an event listener
+    document.getElementById('button').addEventListener('click', function() {
+      console.log('Button clicked!');
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adding a Class</title>
+  <style>
+   .important {
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <p id="paragraph">This is a paragraph.</p>
+  <button id="button">Make it important!</button>
+
+  <script>
+    // Get the button element
+    const button = document.getElementById('button');
+
+    // Add an event listener to the button
+    button.addEventListener('click', function() {
+      // Get the paragraph element
+      const paragraph = document.getElementById('paragraph');
+
+      // Add the 'important' class to the paragraph element
+      paragraph.classList.add('important');
+    });
+  </script>
+</body>
+</html>
+
+
+ /*classList.remove('important') removes the class important from the element's class list.
+classList.toggle('important') toggles the class important on and off.
+classList.contains('important') checks if the element has the class important. *\
+
+
+
+modify the event listener function to toggle the important class on and off:
+
+button.addEventListener('click', function() {
+  const paragraph = document.getElementById('paragraph');
+  paragraph.classList.toggle('important');
+});
+
+
+Here are some examples of event listeners in JavaScript:
+
+// Click event listener
+document.getElementById('button').addEventListener('click', function() {
+  console.log('Button clicked!');
+});
+
+// Keyboard event listener
+document.getElementById('input').addEventListener('keydown', function(event) {
+  console.log('Key pressed:', event.key);
+});
+
+// Mouse event listener
+document.getElementById('element').addEventListener('mouseover', function() {
+  console.log('Mouse over element!');
+});
+
+// Load event listener
+window.addEventListener('load', function() {
+  console.log('Page loaded!');
+});
+
+// Error event listener
+window.addEventListener('error', function(event) {
+  console.log('Error occurred:', event.error);
+});
+
+
+
+ // demonstrates node creation, insertion, removal, and cloning, as well as DOM event handling.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced DOM Manipulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Advanced DOM Manipulation</h1>
+  <p id="paragraph">This is a paragraph.</p>
+  <button id="button">Click me!</button>
+  <script>
+
+    // Get the paragraph element
+    const paragraph = document.getElementById('paragraph');
+
+    // Create a new paragraph element
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'This is a new paragraph.';
+
+    // Append the new paragraph to the body element
+    document.body.appendChild(newParagraph);
+
+
+
+    // Get the button element
+    const button = document.getElementById('button');
+
+    // Add an event listener to the button
+    button.addEventListener('click', () => {
+
+
+      // Remove the paragraph element or replaceChild() method.
+      document.body.removeChild(paragraph);
+
+
+      // Create a new paragraph element
+      const clonedParagraph = paragraph.cloneNode(true);
+
+      // Append the cloned paragraph to the body element or importNode()
+      document.body.appendChild(clonedParagraph);
+    });
+  </script>
+</body>
+</html>
+
+ DOM Traversal
+You can traverse the DOM using methods like parentNode, childNodes, previousSibling, and nextSibling.
+
+// Get the first paragraph element
+const paragraph = document.querySelector('p');
+
+// Get the parent element of the paragraph
+const parent = paragraph.parentNode;
+
+// Get the child nodes of the parent element
+const childNodes = parent.childNodes;
+
+// Get the previous sibling of the paragraph
+const previousSibling = paragraph.previousSibling;
+
+// Get the next sibling of the paragraph
+const nextSibling = paragraph.nextSibling;
