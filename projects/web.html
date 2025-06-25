@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage and JSON</title>
+</head>
+<body>
+<h2>Web Storage and JSON</h2>
+
+
+// Set a value in LocalStorage
+localStorage.setItem('name', 'John Doe');
+
+// Get a value from LocalStorage
+const name = localStorage.getItem('name');
+console.log(name); // Output: "John Doe"
+
+// Set a value in SessionStorage
+sessionStorage.setItem('age', 30);
+
+// Get a value from SessionStorage
+const age = sessionStorage.getItem('age');
+console.log(age); // Output: "30"
+
+
+// Create a JSON object
+const person = {
+  name: 'John Doe',
+  age: 30,
+  occupation: 'Developer'
+};
+
+
+// Convert the JSON object to a string
+const jsonString = JSON.stringify(person);
+console.log(jsonString); // Output: '{"name":"John Doe","age":30,"occupation":"Developer"}'
+
+
+// Convert the JSON string back to a JSON object
+const parsedPerson = JSON.parse(jsonString);
+console.log(parsedPerson); // Output: { name: 'John Doe', age: 30, occupation: 'Developer' }
+
+
+// Create a JSON object
+const person = {
+  name: 'John Doe',
+  age: 30,
+  occupation: 'Developer'
+};
+
+
+// Convert the JSON object to a string and store it in LocalStorage
+localStorage.setItem('person', JSON.stringify(person));
+
+
+// Get the JSON string from LocalStorage and parse it back to a JSON object
+const storedPerson = JSON.parse(localStorage.getItem('person'));
+console.log(storedPerson); // Output: { name: 'John Doe', age: 30, occupation: 'Developer' }
+</body>
+</html>
+
